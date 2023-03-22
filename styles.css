@@ -1,0 +1,95 @@
+body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+h1{
+  margin: 10px 0px 50px 0px;
+}
+
+h2{
+  text-align: center;
+}
+
+.container{
+height: 100%;
+display: flex;
+flex-wrap: wrap;
+}
+
+.shoe1,.shoe2,.shoe3,.shoe4{
+padding: 10px;
+background-color: #EFEFEF;
+margin: 0px 10px;
+box-shadow: 5px 5px 5px #d9d9d9;
+}
+
+.shoe1:hover,.shoe2:hover,.shoe3:hover,.shoe4:hover{
+  padding: 10px;
+  background-color: #EFEFEF;
+  margin: 0px 10px;
+  box-shadow: -5px -5px 5px #d9d9d9;
+  margin-top: 10px;
+  }
+
+
+
+img{
+    height: 300px;
+}
+
+.offerBanner{
+    font-size: 20px;
+    display: flex;
+    background-color: red;
+    color: white;
+    position: absolute; 
+    bottom: 0%;
+    width: 101%;
+    overflow: hidden;
+}
+
+
+
+.textScroll {
+    animation: my-animation 40s linear infinite;
+  }
+  
+  
+  @keyframes my-animation {
+    from {
+      transform: translateX(120%);
+    }
+    to {
+      transform: translateX(-120%);
+    }
+  }
+
+
+/*
+#hamburger drop down menu from the right for the cart
+  - make the order add up all the products for the price
+  
+  - allow ordering more than 1 quantity of the same trainers
+
+  - allow to remove products from the cart
+
+  - make the discounts work for the final price
+
+#change the cart button to be more appealing
+
+# change the colour scheme to be more appealing
+
+# use session variable with php
+
+# store the stock quantity in the db sql 
+  - don't show the stock quantity in the front end
+  
+  - show an alt out of stock image when stock quantity = 0
+  
