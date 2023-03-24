@@ -1,3 +1,9 @@
+html, body {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
 body{
     display: flex;
     height: 100%;
@@ -9,6 +15,13 @@ body{
 
 }
 
+.header{
+  display: flex;
+  width: 100%;
+  background-color: #818181;
+}
+
+
 h1{
   margin: 10px 0px 50px 0px;
 }
@@ -17,8 +30,11 @@ h2{
   text-align: center;
 }
 
+.sidebar h2{
+  color: white;
+}
+
 .container{
-height: 100%;
 display: flex;
 flex-wrap: wrap;
 }
@@ -31,12 +47,22 @@ box-shadow: 5px 5px 5px #d9d9d9;
 }
 
 .shoe1:hover,.shoe2:hover,.shoe3:hover,.shoe4:hover{
-  padding: 10px;
   background-color: #EFEFEF;
   margin: 0px 10px;
   box-shadow: -5px -5px 5px #d9d9d9;
   margin-top: 10px;
-  }
+  cursor: pointer;
+}
+
+
+.shoe1Buy,.shoe2Buy,.shoe3Buy,.shoe4Buy{
+display: flex;
+justify-content: center;
+width: 0;
+height: 0;
+}
+
+
 
 
 
@@ -59,18 +85,91 @@ img{
 
 .textScroll {
     animation: my-animation 40s linear infinite;
-  }
+}
   
   
-  @keyframes my-animation {
+@keyframes my-animation {
     from {
       transform: translateX(120%);
     }
     to {
       transform: translateX(-120%);
     }
-  }
+}
 
+.sidebar {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+  
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+  
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+}
+  
+.openbtn {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 50px;
+    box-shadow: 0px 5px 5px #d9d9d9;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #EFEFEF;
+    color: black;
+    padding: 10px 10px;
+    border: none;
+}
+
+#openbtn{
+    transition: 0.5s;
+}
+  
+ 
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+}
+
+.checkout{
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  bottom: 7.1%;
+  background-color: #111;
+  opacity: 0;
+}
 
 /*
 #hamburger drop down menu from the right for the cart
@@ -78,18 +177,26 @@ img{
   
   - allow ordering more than 1 quantity of the same trainers
 
-  - allow to remove products from the cart
+  - allow to add and remove products from the cart
 
   - make the discounts work for the final price
 
-#change the cart button to be more appealing
+#change the cart button to be more appealing/
 
 # change the colour scheme to be more appealing
 
 # use session variable with php
 
-# store the stock quantity in the db sql 
-  - don't show the stock quantity in the front end
+  -store items in cart
+
+  -amount of each item
   
-  - show an alt out of stock image when stock quantity = 0
+  -price of purchase
+  
+# create item db in mySql
+  - store item name 
+
+  - item id(optional)
+
+  - item price
   
